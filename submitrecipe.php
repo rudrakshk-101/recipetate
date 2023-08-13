@@ -8,23 +8,14 @@ ini_set('display_errors', '1');
 $message = "";
 if (isset($_SESSION['username'])) {
     // User is logged in
-    $message = "hi" . $_SESSION['username'] . "!";
+    $message = $_SESSION['username'] ;
 } else {
     // User is not logged in
     $message = "You are not logged in.";
 }
 ?>
 
-<!-- <!DOCTYPE html>
-<html>
-<head>
-    <title>Dashboard</title>
-</head>
-<body>
-    <h1>Dashboard</h1>
-    <p><?php echo $message; ?></p>
-</body>
-</html> -->
+
 
 
 <!DOCTYPE html>
@@ -45,9 +36,6 @@ if (isset($_SESSION['username'])) {
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="#"><?php echo $message; ?></a>
-              </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Home</a>
               </li>
@@ -60,12 +48,15 @@ if (isset($_SESSION['username'])) {
               <li class="nav-item">
                 <a class="nav-link" href="register.html">Register</a>
               </li>
+            <li class="nav-item">
+                <h2 class="usernamed"><?php echo $message; ?></h2>
+              </li>
             </ul>
           </div>
         </nav>
     <div class="container">
         <h1>Submit Your Recipe</h1>
-        <form enctype="multipart/form-data" action="submitrecipe.php" >
+        <form enctype="multipart/form-data" action="recipedetail.php" >
             <label for="recipeName">Recipe Name:</label>
             <input type="text" id="recipeName" name="recipeName" required>
 

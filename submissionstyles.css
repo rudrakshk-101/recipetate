@@ -142,3 +142,11 @@ button:hover {
           transform: translateY(0);
         }
       }
+
+      .usernamed
+      {
+        color: green;
+        font: 12px;
+        font-weight: bold;
+        margin-left: 20px;
+      }

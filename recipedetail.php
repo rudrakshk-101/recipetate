@@ -1,3 +1,22 @@
+<?php
+session_start();
+
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
+
+$message = "";
+if (isset($_SESSION['username'])) {
+    // User is logged in
+    $message = $_SESSION['username'] ;
+} else {
+    // User is not logged in
+    $message = "You are not logged in.";
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,6 +49,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="register.html">Register</a>
               </li>
+            <li class="nav-item">
+                <h2 class="usernamed"><?php echo $message; ?></h2>
+              </li>
             </ul>
           </div>
         </nav>
@@ -42,17 +64,12 @@
             <div class="speakerCard">
               <div class="image">
                 <img src="images/paneer tikka.jpeg" alt="kevin" width="285px"!important />
-                <h1 class="recipename">Paneer tikka</h1>
+                <h1>Paneer tikka</h1>
               </div>
               <div class="info">
-                <p class="ingredients">
-                  <h4 class="infoheading">INGREDIENTS</h4>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore labore voluptate ducimus repellendus eum, cupiditate tempora tempore expedita culpa. Nostrum corporis dignissimos nulla ipsa laboriosam ad voluptas doloribus obcaecati ipsum.
+                <p class="infoup">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi, molestiae quaerat at pariatur perspiciatis iste perferendis ratione excepturi rem vel facilis, blanditiis iusto architecto harum corrupti exercitationem! Suscipit, numquam porro.
                 </p>
-                <div class="instructions">
-                  <h4 class="infoheading">INSTRUCTIONS</h4>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore labore voluptate ducimus repellendus eum, cupiditate tempora tempore expedita culpa. Nostrum corporis dignissimos nulla ipsa laboriosam ad voluptas doloribus obcaecati ipsum.
-                </div>
                 <p class="infodown"></p>
               </div>
             </div>
