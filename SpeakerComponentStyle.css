@@ -1,0 +1,200 @@
+* {
+    padding: 0;
+    margin: 0;
+  }
+  body {
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+  }
+  html {
+    font-size: 16px;
+  }
+  .outest
+  {
+    /* margin-top: 6rem; */
+    width: 100%;
+    height: fit-content;
+    /* border: 1px solid wheat; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .recipitatelogo
+  {
+    text-align: center;
+    color: wheat;
+    margin-top: 5rem;
+    font-size: 80px;
+  }
+  .outer {
+    /* margin-left: 10vw; */
+    /* margin-right: 0; */
+    display: flex;
+    justify-content: center;
+    width: 42rem;
+    height: 21.5rem;
+    /* border: 2px solid red; */
+    margin-bottom: 2rem;
+    position: relative;
+    left: 0;
+  }
+  .outer2 {
+    /* margin-left: 45vw; */
+    /* margin-right: 0; */
+    display: flex;
+    justify-content: center;
+    width: 42rem;
+    height: 21.5rem;
+    /* border: 2px solid red; */
+    margin-bottom: 2rem;
+  }
+  .speakercard {
+    /* position: relative; */
+    display: flex;
+    justify-content: center;
+  }
+  .image img {
+    border-radius: 0.5rem;
+  }
+  .image {
+    width: 18.75rem;
+    height: 21rem;
+    border: 0.5rem solid red;
+    color: white;
+    z-index: 2;
+    position: absolute;
+    transition: transform 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    border-radius: 1rem;
+    text-align: center;
+  }
+
+  .outer:hover .image {
+    transform: translatex(-8%);
+  }
+
+  .image2 img {
+    border-radius: 0.5rem;
+  }
+  .image2 {
+    width: 18.75rem;
+    height: 21rem;
+    border: 0.5rem solid red;
+    color: white;
+    z-index: 2;
+    position: absolute;
+    transition: transform 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    border-radius: 1rem;
+    text-align: center;
+  }
+
+  
+  
+  .info {
+    /* background-color: white; */
+    width: 18.75rem;
+    height: 21rem;
+    border: 0.5rem solid red;
+    overflow: hidden;
+    display: block;
+    z-index: 1;
+    top: 0;
+    color: red;
+  
+    /* display: none; */
+    /* left: 0; */
+    /* position: absolute; */
+    border-radius: 1rem;
+    transition: background-color 1.2s,
+      width 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+      transform 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+  }
+  .info p {
+    /* height: 5rem;
+    overflow: hidden; */
+    display: none;
+    transition: display 1.2s;
+  }
+  .outer:hover .info {
+    transform: translatex(47%);
+    width: 37.5rem;
+    /* display: block; */
+    background-color: white;
+    text-align: center;
+  }
+  
+  .outer:hover .info p {
+    display: block;
+  }
+  
+  .outer2:hover .info {
+    transform: translatex(-47%);
+    width: 37.5rem;
+    /* display: block; */
+    background-color: white;
+    text-align: center;
+  }
+  
+  .outer2:hover .info p {
+    display: block;
+  }
+
+  /* .outer2:hover .image2 {
+    transform: translatex(8%);
+  } */
+  .outer2:hover .image2{
+    transform: translatex(103%);
+  }
+
+  /* Custom styles go here */
+
+    /* Navbar background color */
+    .navbar {
+      background-color: black;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      z-index: 10;
+    }
+
+    .navbar
+
+    /* Text color on the links
+    .navbar-light .navbar-nav .nav-link {
+      color: white !important;
+    } */
+
+    .nav-link
+    {
+      color: white !important;
+    }
+
+    /* Change active link color */
+    .navbar-light .navbar-nav .nav-link.active {
+      color: rgb(183, 250, 183) !important;
+    }
+
+    /* Add animation to navbar collapse */
+    .navbar-collapse {
+      animation: slideIn 0.5s ease;
+    }
+    
+    .navbar li{
+      color: white !important;
+    }
+
+    @keyframes slideIn {
+      0% {
+        transform: translateY(-100%);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+
