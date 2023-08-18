@@ -56,9 +56,9 @@ if (isset($_SESSION['username'])) {
         </nav>
     <div class="container">
         <h1>Submit Your Recipe</h1>
-        <form enctype="multipart/form-data" action="recipedetail.php" >
+        <form enctype="multipart/form-data" action="submiting.php" method="post" >
             <label for="recipeName">Recipe Name:</label>
-            <input type="text" id="recipeName" name="recipeName" required>
+            <input type="text" id="recipeName" name="name" required>
 
             <label for="ingredients">Ingredients:</label>
             <textarea id="ingredients" name="ingredients" rows="4" required></textarea>
@@ -70,7 +70,7 @@ if (isset($_SESSION['username'])) {
             <input type="file" id="image" name="image" accept="image/*">
 
             <!-- <a href="recipedetail.html"><button type="submit">Submit Recipe</button></a> -->
-            <button type="submit" >Submit Recipe</button>
+            <button name="recipesubmit" type="submit" >Submit Recipe</button>
         </form>
     </div>
 </body>
