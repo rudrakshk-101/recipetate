@@ -6,12 +6,14 @@ ini_set('display_errors', '1');
 
 
 $message = "";
+$message = $_SESSION['username'] ;
 if (isset($_SESSION['username'])) {
     // User is logged in
     $message = $_SESSION['username'] ;
 } else {
     // User is not logged in
     $message = "You are not logged in.";
+    header("Location: login.html");
 }
 ?>
 
@@ -25,7 +27,7 @@ if (isset($_SESSION['username'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe Submission Page</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="submissionstyles.css">
+    <link rel="stylesheet" href="css/submissionstyles.css">
   </head>
   <body>
         <nav class="navbar navbar-expand-lg navbar-light">
@@ -37,13 +39,13 @@ if (isset($_SESSION['username'])) {
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="index.html">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="submission.html">Create</a>
+                <a class="nav-link active" href="submitrecipe.php">Create</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="recipedetail.html">Recipe</a>
+                <a class="nav-link" href="detailrenderpage.php">Recipe</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="register.html">Register</a>

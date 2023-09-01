@@ -8,7 +8,7 @@
     height: 100vh;
     font-family: sans-serif;
     background-color: whitesmoke;
-       background-image: url("images/fresh-colourful-ingredients-mexican-cuisine.jpg");
+       background-image: url("../images/fresh-colourful-ingredients-mexican-cuisine.jpg");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -30,7 +30,7 @@
   .recipitatelogo
   {
     text-align: center;
-    color: wheat;
+    color: black;
     margin-top: 5rem;
     font-size: 80px;
   }

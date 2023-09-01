@@ -29,10 +29,14 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
             $user_id=2;
             $_SESSION['user_id'] = $row['id'];
             $_SESSION['username']=$username;
+            session_write_close();
+            ob_start(); // Start output buffering
             header("Location: submitrecipe.php");
+            ob_end_flush();
             exit();
         } else {
             $error = "Incorrect username or password.";
+            echo "invalid Credentials";
         }
     } else {
         $error = "User not found.";

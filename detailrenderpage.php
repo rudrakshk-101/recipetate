@@ -20,15 +20,18 @@ if ($conn->connect_error) {
 }
 
 // Fetch recipe data from the database
-$sql = "SELECT userpost, name,ingredients, instructions FROM recipe"; // Replace with your table name and column names
+$sql = "SELECT userpost, name,ingredients, instructions, img FROM recipe"; // Replace with your table name and column names
 $result = $conn->query($sql);
 
 $data = array();
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $data[] = $row;
+        
     }
 }
+
+
 
 ?>
 
@@ -39,7 +42,7 @@ if ($result->num_rows > 0) {
 <head>
     <title>Recipe Cards</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="recipedetailpagestyle.css">
+    <link rel="stylesheet" type="text/css" href="css/recipedetailpagestyle.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light">
@@ -51,13 +54,13 @@ if ($result->num_rows > 0) {
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="index.html">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="submission.html">Create</a>
+                <a class="nav-link" href="submitrecipe.php">Create</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="recipedetail.html">Recipe</a>
+                <a class="nav-link active" href="detailrenderpage.php">Recipe</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="register.html">Register</a>
@@ -66,6 +69,8 @@ if ($result->num_rows > 0) {
           </div>
         </nav>
     <!-- Your navbar HTML here -->
+
+    <h1 class="recipitatelogo">RECIPITATE</h1>
 
     <div class="outest">
         <?php
@@ -86,6 +91,8 @@ if ($result->num_rows > 0) {
             for ($i = 0; $i < $recipeCount; $i++) {
                 $recipe = $recipes[$i];
                 // echo $recipe['name'];
+                if($i%2==0)
+                {
             ?>
 
 
@@ -94,7 +101,8 @@ if ($result->num_rows > 0) {
             <div class="outer">
             <div class="speakerCard">
               <div class="image">
-                <img src="images/paneer tikka.jpeg" alt="kevin" width="285px"!important />
+                <!-- <img src="images/paneer tikka.jpeg" alt="kevin" width="285px" !important /> -->
+                <img src="images/paneer tikka.jpeg" onerror="this.src='images/pizza.jpeg'" alt="The Photo did not load due to some error" width="285px"!important />
                 <h1 class="recipename"><?php  echo $recipe['name'];  ?></h1>
               </div>
               <div class="info">
@@ -115,13 +123,18 @@ if ($result->num_rows > 0) {
             </div>
           </div>
 
-              <?php $i++ ; ?>
+              <?php 
+                }
+              else {
+              ?>
+
               <!-- outer 2 -->
 
+              
               <div class="outer2">
             <div class="speakerCard">
               <div class="image2">
-                <img src="images/paneer tikka.jpeg" alt="kevin" width="285px"!important />
+                <img src="images/paneer tikka.jpeg" onerror="this.src='images/pizza.jpeg'" alt="The Photo did not load due to some error" width="285px"!important />
                 <h1 class="recipename"><?php  echo $recipe['name'];  ?></h1>
               </div>
               <div class="info">
@@ -141,10 +154,12 @@ if ($result->num_rows > 0) {
               </div>
             </div>
           </div>
-
         <?php
+              }
+            
         }
-    } else {
+      }
+      else {
         echo "Error: Failed to retrieve valid data.";
     }
         ?>

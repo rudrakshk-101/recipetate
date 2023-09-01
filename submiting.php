@@ -36,17 +36,19 @@ if (isset($_POST['recipesubmit'])) {
     $name = $_POST['name'];
     $ingredients = $_POST['ingredients'];
     $instructions = $_POST['instructions'];
+    $image = $_FILES["image"]["tmp_name"];
+    // $imageData = addslashes(file_get_contents($image));
 
     // Insert data into the database
-    $sql = "INSERT INTO recipe (userpost, name, ingredients, instructions) 
-            VALUES ('$userpost','$name', '$ingredients', '$instructions')";
+    $sql = "INSERT INTO recipe (userpost, name, ingredients, instructions, img) 
+            VALUES ('$userpost','$name', '$ingredients', '$instructions', '$imageData')";
 
-    if ($conn->query($sql) === TRUE) {
-        
-        header("Location: detailrenderpage.php");
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-    }
+if ($conn->query($sql) === TRUE) {
+    header("Location: detailrenderpage.php");
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
 }
 
 $conn->close();

@@ -5,7 +5,7 @@
 }*/
 html, body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: url(images/fresh-colourful-ingredients-mexican-cuisine.jpg);
+    background-image: url(../images/fresh-colourful-ingredients-mexican-cuisine.jpg);
     height:100%;
     background-size: cover;
     background-repeat: no-repeat;
